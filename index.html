@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AtomicForm interactive web interface</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style>
+			html, body, .fill {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			iframe {
+				border: none;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<iframe id="frame" class="fill"></iframe>
+
+		<script>
+			const itemURLs = [
+				"https://generator.artblocks.io/133000755",
+				"https://generator.artblocks.io/126000197",
+				"https://generator.artblocks.io/130000354",
+				"https://generator.artblocks.io/129000619",
+				"https://generator.artblocks.io/117004599"
+			];
+
+			const frame = document.getElementById("frame");
+			frame.src = itemURLs[0];
+
+			let itemIndex = 0;
+			setInterval(() => {
+				itemIndex++;
+				if(itemIndex >= itemURLs.length) itemIndex = 0;
+				frame.src = itemURLs[itemIndex];
+			}, 5 * 1000);
+		</script>
+	</body>
+</html>
