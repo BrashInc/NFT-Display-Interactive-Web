@@ -23,15 +23,19 @@
 
 		<script>
 			const itemURLs = [
-				"https://generator.artblocks.io/133000755",
-				"https://generator.artblocks.io/126000197",
-				"https://generator.artblocks.io/130000354",
-				"https://generator.artblocks.io/129000619",
-				"https://generator.artblocks.io/117004599"
+				"https://generator.artblocks.io/117004599",
+				//Gen 2
+				"https://generator.artblocks.io/18000000",
+				"https://generator.artblocks.io/18000001",
+				"https://generator.artblocks.io/18000002",
+				//Endless Nameless
+				"https://generator.artblocks.io/120000000",
+				"https://generator.artblocks.io/120000001",
 			];
 
 			const frame = document.getElementById("frame");
 			frame.src = itemURLs[0];
+			frame.onload = () => (frame.contentDocument || frame.contentWindow.document).getElementsByTagName("head")[0].click();
 
 			let itemIndex = 0;
 			setInterval(() => {
